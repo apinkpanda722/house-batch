@@ -7,6 +7,9 @@ spring:
 
 ---
 spring:
+  batch:
+    jdbc:
+      initialize-schema: always
   config:
     activate:
       on-profile: local
