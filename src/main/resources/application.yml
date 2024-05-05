@@ -20,9 +20,9 @@ spring:
     password: house
   jpa:
     show-sql: true
-    generate-ddl: false
+    generate-ddl: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     batch:
       jdbc:
         initialize-schema: ALWAYS
