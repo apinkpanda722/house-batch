@@ -7,106 +7,106 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *  ¾ÆÆÄÆ® ½Ç°Å·¡°¡ APIÀÇ °¢°¢ÀÇ °Å·¡ Á¤º¸¸¦ ´ã´Â °´Ã¼
+ *  ì•„íŒŒíŠ¸ ì‹¤ê±°ë˜ê°€ APIì˜ ê°ê°ì˜ ê±°ë˜ ì •ë³´ë¥¼ ë‹´ëŠ” ê°ì²´
  */
 @ToString
 @Getter
 @XmlRootElement(name = "item")
 public class AptDealDto {
 
-    @XmlElement(name = "°Å·¡±İ¾×")
+    @XmlElement(name = "ê±°ë˜ê¸ˆì•¡")
     private String dealAmount;
 
-    @XmlElement(name = "°Å·¡À¯Çü")
+    @XmlElement(name = "ê±°ë˜ìœ í˜•")
     private String dealType;
 
-    @XmlElement(name = "°ÇÃà³âµµ")
+    @XmlElement(name = "ê±´ì¶•ë…„ë„")
     private Integer builtYear;
 
-    @XmlElement(name = "³â")
+    @XmlElement(name = "ë…„")
     private Integer year;
 
-    @XmlElement(name = "µµ·Î¸í")
+    @XmlElement(name = "ë„ë¡œëª…")
     private String roadName;
 
-    @XmlElement(name = "µµ·Î¸í°Ç¹°º»¹øÈ£ÄÚµå")
+    @XmlElement(name = "ë„ë¡œëª…ê±´ë¬¼ë³¸ë²ˆí˜¸ì½”ë“œ")
     private String roadNameBuildingMainNumberCode;
 
-    @XmlElement(name = "µµ·Î¸í°Ç¹°ºÎ¹øÈ£ÄÚµå")
+    @XmlElement(name = "ë„ë¡œëª…ê±´ë¬¼ë¶€ë²ˆí˜¸ì½”ë“œ")
     private String roadNameBuildingSecondNumberCode;
 
-    @XmlElement(name = "µµ·Î¸í½Ã±º±¸ÄÚµå")
+    @XmlElement(name = "ë„ë¡œëª…ì‹œêµ°êµ¬ì½”ë“œ")
     private String roadNameGunDistrictCode;
 
-    @XmlElement(name = "µµ·Î¸íÀÏ·Ã¹øÈ£ÄÚµå")
+    @XmlElement(name = "ë„ë¡œëª…ì¼ë ¨ë²ˆí˜¸ì½”ë“œ")
     private String roadNameSerialNumberCode;
 
-    @XmlElement(name = "µµ·Î¸íÁö»óÁöÇÏÄÚµå")
+    @XmlElement(name = "ë„ë¡œëª…ì§€ìƒì§€í•˜ì½”ë“œ")
     private String roadNameUnderGroundCode;
 
-    @XmlElement(name = "µµ·Î¸íÄÚµå")
+    @XmlElement(name = "ë„ë¡œëª…ì½”ë“œ")
     private String roadNameCode;
 
-    @XmlElement(name = "µ¿")
+    @XmlElement(name = "ë™")
     private String dong;
 
-    @XmlElement(name = "µî±âÀÏÀÚ")
+    @XmlElement(name = "ë“±ê¸°ì¼ì")
     private String registrationDate;
 
-    @XmlElement(name = "¸ÅµµÀÚ")
+    @XmlElement(name = "ë§¤ë„ì")
     private String seller;
 
-    @XmlElement(name = "¸Å¼öÀÚ")
+    @XmlElement(name = "ë§¤ìˆ˜ì")
     private String buyer;
 
-    @XmlElement(name = "¹ıÁ¤µ¿")
+    @XmlElement(name = "ë²•ì •ë™")
     private String lawDong;
 
-    @XmlElement(name = "¹ıÁ¤µ¿º»¹øÄÚµå")
+    @XmlElement(name = "ë²•ì •ë™ë³¸ë²ˆì½”ë“œ")
     private String lawDongMainNumberCode;
 
-    @XmlElement(name = "¹ıÁ¤µ¿ºÎ¹øÄÚµå")
+    @XmlElement(name = "ë²•ì •ë™ë¶€ë²ˆì½”ë“œ")
     private String lawDongSecondNumberCode;
 
-    @XmlElement(name = "¹ıÁ¤µ¿½Ã±º±¸ÄÚµå")
+    @XmlElement(name = "ë²•ì •ë™ì‹œêµ°êµ¬ì½”ë“œ")
     private String lawDongGunDistrictCode;
 
-    @XmlElement(name = "¹ıÁ¤µ¿À¾¸éµ¿ÄÚµå")
+    @XmlElement(name = "ë²•ì •ë™ìë©´ë™ì½”ë“œ")
     private String lawDongMyunDistrictCode;
 
-    @XmlElement(name = "¹ıÁ¤µ¿Áö¹øÄÚµå")
+    @XmlElement(name = "ë²•ì •ë™ì§€ë²ˆì½”ë“œ")
     private String lawDongJibunCode;
 
-    @XmlElement(name = "¾ÆÆÄÆ®")
+    @XmlElement(name = "ì•„íŒŒíŠ¸")
     private String aptName;
 
-    @XmlElement(name = "¿ù")
+    @XmlElement(name = "ì›”")
     private Integer month;
 
-    @XmlElement(name = "ÀÏ")
+    @XmlElement(name = "ì¼")
     private Integer day;
 
-    @XmlElement(name = "ÀÏ·Ã¹øÈ£")
+    @XmlElement(name = "ì¼ë ¨ë²ˆí˜¸")
     private String serialNumber;
 
-    @XmlElement(name = "Àü¿ë¸éÀû")
+    @XmlElement(name = "ì „ìš©ë©´ì ")
     private Double exclusiveArea;
 
-    @XmlElement(name = "Áß°³»ç¼ÒÀçÁö")
+    @XmlElement(name = "ì¤‘ê°œì‚¬ì†Œì¬ì§€")
     private String intermediaryAgentLocation;
 
-    @XmlElement(name = "Áö¹ø")
+    @XmlElement(name = "ì§€ë²ˆ")
     private String jibun;
 
-    @XmlElement(name = "Áö¿ªÄÚµå")
+    @XmlElement(name = "ì§€ì—­ì½”ë“œ")
     private String regionalCode;
 
-    @XmlElement(name = "Ãş")
+    @XmlElement(name = "ì¸µ")
     private Integer floor;
 
-    @XmlElement(name = "ÇØÁ¦»çÀ¯¹ß»ıÀÏ")
+    @XmlElement(name = "í•´ì œì‚¬ìœ ë°œìƒì¼")
     private String dealCanceledDate;
 
-    @XmlElement(name = "ÇØÁ¦¿©ºÎ")
+    @XmlElement(name = "í•´ì œì—¬ë¶€")
     private String dealCanceled;
 }

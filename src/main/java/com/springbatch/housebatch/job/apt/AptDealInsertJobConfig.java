@@ -1,5 +1,6 @@
 package com.springbatch.housebatch.job.apt;
 
+import com.springbatch.housebatch.adapter.ApartmentApiResource;
 import com.springbatch.housebatch.dto.AptDealDto;
 import com.springbatch.housebatch.job.validator.FilePathParameterValidator;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +21,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
+import java.time.YearMonth;
+
 @Configuration
 @RequiredArgsConstructor
 @Slf4j
@@ -27,11 +30,12 @@ public class AptDealInsertJobConfig {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
+    private final ApartmentApiResource apartmentApiResource;
+
     @Bean
     public Job aptDealInsertJob(Step aptDealInsertStep) {
          return jobBuilderFactory.get("aptDealInsertJob")
                  .incrementer(new RunIdIncrementer())
-                 .validator(new FilePathParameterValidator())
                  .start(aptDealInsertStep)
                  .build();
     }
@@ -39,24 +43,24 @@ public class AptDealInsertJobConfig {
     @JobScope
     @Bean
     public Step aptDealInsertStep(
-            StaxEventItemReader<AptDealDto> aptDealResourceReader
+            StaxEventItemReader<AptDealDto> aptDealResourceReader,
+            ItemWriter<AptDealDto> aptDealWriter
     ) {
         return stepBuilderFactory.get("aptDealInsertStep")
                 .<AptDealDto, AptDealDto>chunk(10)
                 .reader(aptDealResourceReader)
-                .writer(aptDealWriter())
+                .writer(aptDealWriter)
                 .build();
     }
 
     @StepScope
     @Bean
     public StaxEventItemReader<AptDealDto> aptDealResourceReader(
-            @Value("#{jobParameters['filePath']}") String filePath,
             Jaxb2Marshaller aptDealDtoMarshaller
     ) {
         return new StaxEventItemReaderBuilder<AptDealDto>()
                 .name("aptDealResourceReader")
-                .resource(new ClassPathResource(filePath))
+                .resource(apartmentApiResource.getResource("41135", YearMonth.of(2021, 7)))
                 .addFragmentRootElements("item")
                 .unmarshaller(aptDealDtoMarshaller)
                 .build();
@@ -70,9 +74,12 @@ public class AptDealInsertJobConfig {
         return jaxb2Marshaller;
     }
 
-    private ItemWriter<AptDealDto> aptDealWriter() {
+    @StepScope
+    @Bean
+    public ItemWriter<AptDealDto> aptDealWriter() {
         return items -> {
             items.forEach(System.out::println);
+            System.out.println("================== Writing Completed ==================");
         };
     }
 }

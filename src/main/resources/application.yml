@@ -22,10 +22,11 @@ spring:
     show-sql: true
     generate-ddl: true
     hibernate:
-      ddl-auto: create
-    batch:
-      jdbc:
-        initialize-schema: ALWAYS
+      ddl-auto: none
+external:
+  apartment-api:
+    path: http://openapi.molit.go.kr/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTradeDev
+    service-key: jEIrt7Smf5IMFrn65l99DegsRF5rusgCpOpV6yV8DIPezaaV6gblD4m2Ndrlf%2BNqZzsA4SPnQfDOpnmOP6YDFA%3D%3D
 
 ---
 spring:
